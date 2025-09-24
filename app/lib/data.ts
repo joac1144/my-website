@@ -1,8 +1,12 @@
-export async function fetchProjects() {
-    // Simulate fetching data from a database or an API
-    return [
-        { id: 1, name: "Project One", description: "This is the first project." },
-        { id: 2, name: "Project Two", description: "This is the second project." },
-        { id: 3, name: "Project Three", description: "This is the third project." }
-    ]
+import { cache } from "react";
+import { ProjectDetails, ProjectMetadata } from "./models";
+
+export async function fetchProjects(): Promise<ProjectMetadata[]> {
+    const res = await fetch(`${process.env.BACKEND_API_URL}/projects`);
+    return await res.json();
 }
+
+export const fetchProjectDetails: (slug: string) => Promise<ProjectDetails> = cache(async (slug: string) => {
+    const res = await fetch(`${process.env.BACKEND_API_URL}/projects/${slug}`);
+    return await res.json();
+});
