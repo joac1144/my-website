@@ -46,9 +46,7 @@ export default async function Page({ params }: Props) {
                 </div>
             )}
 
-            {/* Rich Content (basic rendering) */}
             <section className="prose prose-lg max-w-none mb-12">
-                {/* Placeholder since you’re getting DAST from DatoCMS */}
                 <p>
                     <em>
                         Render rich text content here (e.g., paragraphs, headings, lists).
@@ -56,7 +54,6 @@ export default async function Page({ params }: Props) {
                 </p>
             </section>
 
-            {/* Gallery */}
             {project.gallery?.length > 0 && (
                 <section>
                     <h2 className="text-2xl font-semibold mb-4">Gallery</h2>
