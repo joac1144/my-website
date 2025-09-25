@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Metadata } from 'next';
+import Link from "next/link";
+import Image from "next/image";
+import { Metadata } from "next";
 import { fetchProjects } from "@/app/lib/data";
 
 export const metadata: Metadata = {
