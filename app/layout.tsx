@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/app/ui/nav-bar";
@@ -24,6 +25,7 @@ export default function RootLayout({
                 <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
                     Some footer
                 </footer>
+                <SpeedInsights />
             </body>
         </html>
     );
