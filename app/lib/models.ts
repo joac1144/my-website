@@ -1,3 +1,15 @@
+export type ProjectsMetadataResponse = {
+    data: {
+        allProjects: ProjectMetadata[];
+    }
+}
+
+export type ProjectDetailsResponse = {
+    data: {
+        project: ProjectDetails;
+    }
+}
+
 export type ProjectMetadata = {
     title: string;
     slug: string;
@@ -5,12 +17,13 @@ export type ProjectMetadata = {
     thumbnail: {
         url: string;
     },
-    technologies: {
+    tags: {
         name: string;
         logo: {
             url: string;
         }
     }[];
+    pinned: boolean;
 };
 
 export type ProjectDetails = {
@@ -19,13 +32,13 @@ export type ProjectDetails = {
     thumbnail: {
         url: string;
     },
-    technologies: {
+    tags: {
         name: string;
         logo: {
             url: string;
         }
     }[];
-    content: unknown;
+    content: string;
     gallery: {
         url: string;
     }[];
