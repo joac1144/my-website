@@ -6,29 +6,17 @@ import clsx from "clsx";
 import { sourceSerif4 } from "@/app/ui/fonts";
 
 const links = [
-    {
-        name: "Home",
-        href: "/"
-    },
-    {
-        name: "Projects",
-        href: "/projects"
-    },
-    {
-        name: "Contact",
-        href: "/contact"
-    },
-    {
-        name: "Nexj.js Training",
-        href: "/nextjs-training"
-    }
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "Contact", href: "/contact" },
+    { name: "Nexj.js Training", href: "/nextjs-training" }
 ];
 
 export default function NavBar() {
     const pathname = usePathname();
 
     return (
-        <nav className="w-full border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <nav className="w-full bg-black/75 sticky top-0 z-50 shadow shadow-purple-500">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-center h-16 items-center">
                     <div className="flex w-full max-w-2xl">
@@ -39,13 +27,13 @@ export default function NavBar() {
                                 className={clsx(
                                     `relative ${sourceSerif4.className} text-md font-medium flex-1 text-center py-3 rounded transition-colors duration-200`,
                                     pathname === link.href
-                                        ? "text-gray-900 dark:text-white"
-                                        : "text-gray-500 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800"
+                                        ? "text-white"
+                                        : "text-gray-200 hover:text-white hover:bg-[#4B0082]/40"
                                 )}
                             >
                                 {link.name}
                                 {pathname === link.href && (
-                                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-gray-900 dark:bg-white rounded"></span>
+                                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:w-10 md:w-20 h-0.5 bg-purple-900 rounded"></span>
                                 )}
                             </Link>
                         ))}

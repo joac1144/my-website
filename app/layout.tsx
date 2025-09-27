@@ -2,6 +2,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "@/app/ui/nav-bar";
+import { sourceSerif4 } from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
     title: "Joac's Portfolio",
@@ -15,14 +16,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
-                <div>
-                    <NavBar />
-                </div>
+            <body className={`${sourceSerif4.className} antialiased bg-[#121212]` /* bg-linear-to-t from-purple-900 to-black */ }> 
+                <NavBar />
                 <main className="min-h-screen">
                     {children}
                 </main>
-                <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+                <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center shadow shadow-purple-500">
                     Some footer
                 </footer>
                 <SpeedInsights />
