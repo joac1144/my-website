@@ -12,13 +12,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const slug = (await params).slug;
     const projectDetailsResponse = await fetchProjectDetails(slug);
 
-    if (projectDetailsResponse === null) {
-        return {
-            title: "Project Not Found",
-            description: "The project you are looking for does not exist.",
-        };
-    }
-
     if (!projectDetailsResponse.data.project) {
         return {
             title: "Project Not Found",
