@@ -2,7 +2,7 @@
 
 A personal portfolio built with Next.js, .NET 9, and DatoCMS.
 
-## Teck Stack
+## Tech Stack
 
 - Next.js 15 for the frontend
 - ASP.NET Core Web API (Controllers) for the backend
