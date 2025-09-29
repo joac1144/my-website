@@ -6,11 +6,14 @@ import clsx from "clsx";
 import { sourceSerif4 } from "@/app/ui/fonts";
 
 const links = [
-    { name: "Home", href: "/" },
+    { name: "About", href: "/" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
-    { name: "Nexj.js Training", href: "/nextjs-training" }
+    { name: "Contact", href: "/contact" }
 ];
+
+if (process.env.NODE_ENV === "development") {
+    links.push({ name: "Nexj.js Training", href: "/nextjs-training" });
+}
 
 export default function NavBar() {
     const pathname = usePathname();

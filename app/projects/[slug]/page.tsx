@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { fetchProjectDetails } from "@/app/lib/data";
+import { notFound } from "next/navigation";
 
 type Props = {
     params: Promise<{ slug: string }>
@@ -9,19 +10,31 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const slug = (await params).slug;
-
     const projectDetailsResponse = await fetchProjectDetails(slug);
+
+    if (!projectDetailsResponse.data.project) {
+        return {
+            title: "Project Not Found",
+            description: "The project you are looking for does not exist.",
+        };
+    }
+
     const project = projectDetailsResponse.data.project;
 
     return {
         title: `Project - ${project.title}`,
-        description: `Details about the project ${project.title}`,
+        description: `Details about the project '${project.title}'`,
     };
 }
 
 export default async function Page({ params }: Props) {
     const slug = (await params).slug;
     const projectDetailsResponse = await fetchProjectDetails(slug);
+
+    if (!projectDetailsResponse.data.project) {
+        notFound();
+    }
+
     const project = projectDetailsResponse.data.project;
 
     return (
@@ -35,7 +48,7 @@ export default async function Page({ params }: Props) {
                             {project.tags.map((tag) => (
                                 <div
                                     key={tag.name}
-                                    className="flex items-center gap-2 px-3 py-1 border-2 border-purple-800 rounded-full shadow-sm bg-gray-50"
+                                    className="flex items-center gap-2 px-3 py-1 border-2 border-purple-800/75 rounded-full bg-white/5 text-gray-200 text-sm font-medium"
                                 >
                                     {tag.logo && (
                                         <Image
@@ -45,7 +58,7 @@ export default async function Page({ params }: Props) {
                                             height={20}
                                         />
                                     )}
-                                    <span className="text-sm font-medium text-black">{tag.name}</span>
+                                    <span>{tag.name}</span>
                                 </div>
                             ))}
                         </div>
