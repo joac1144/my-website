@@ -1,13 +1,11 @@
 export default function Loading() {
     return (
         <div className="max-w-6xl mx-auto px-6 py-12">
-            {/* Header */}
             <div className="text-center mb-12">
                 <div className="h-8 w-48 bg-gray-800/40 rounded mx-auto mb-3 animate-pulse" />
                 <div className="h-5 w-72 bg-gray-800/30 rounded mx-auto animate-pulse" />
             </div>
 
-            {/* Grid of project cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {Array.from({ length: 6 }).map((_, i) => (
                     <div
