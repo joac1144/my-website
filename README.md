@@ -1,10 +1,10 @@
 # joac1144.com
 
-A personal portfolio built with Next.js, .NET 9, and DatoCMS.
+A personal portfolio built with Next.js 15, .NET 9, and DatoCMS.
 
 ## Tech Stack
 
-- [Next.js 15](https://nextjs.org/) for the frontend
+- [Next.js](https://nextjs.org/) for the frontend
 - [ASP.NET Core](https://dotnet.microsoft.com/en-us/apps/aspnet) Web API (Controllers) for the backend
 - [DatoCMS](https://www.datocms.com/) for content management
 - [Tailwind CSS](https://tailwindcss.com/) for styling
