@@ -16,14 +16,14 @@ export default function ContactForm() {
                         <label htmlFor="name" className="block font-medium text-gray-300 mb-1">
                             Name
                         </label>
-                        <Input id="name" name="name" ariaDescribedBy="name-error" />
+                        <Input id="name" name="name" ariaDescribedBy="name-error" defaultValue={formState.values?.name} />
                         <FormError id="name-error" errors={formState.errors?.name} />
                     </div>
                     <div>
                         <label htmlFor="email" className="block font-medium text-gray-300 mb-1">
                             Email
                         </label>
-                        <Input id="email" name="email" type="email" ariaDescribedBy="email-error" />
+                        <Input id="email" name="email" type="email" ariaDescribedBy="email-error" defaultValue={formState.values?.email} />
                         <FormError id="email-error" errors={formState.errors?.email} />
                     </div>
                     <div>
@@ -35,6 +35,7 @@ export default function ContactForm() {
                             name="message"
                             rows={5}
                             aria-describedby="message-error"
+                            defaultValue={formState.values?.message}
                             className="w-full rounded-lg bg-black/5 border border-purple-700/50 text-gray-200 placeholder-gray-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                         />
                         <FormError id="message-error" errors={formState.errors?.message} />

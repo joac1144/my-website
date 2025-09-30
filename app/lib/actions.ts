@@ -17,6 +17,11 @@ export type ContactFormState = {
         email?: string[];
         message?: string[];
     };
+    values?: {
+        name?: string;
+        email?: string;
+        message?: string;
+    }
 };
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -30,8 +35,13 @@ export async function sendContactForm(prevState: ContactFormState, formData: For
 
     if (!validatedFields.success) {
         return {
+            message: null,
             errors: z.flattenError(validatedFields.error).fieldErrors,
-            message: null
+            values: {
+                name: formData.get("name") as string,
+                email: formData.get("email") as string,
+                message: formData.get("message") as string,
+            },
         }
     }
 
