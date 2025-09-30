@@ -19,7 +19,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${sourceSerif4.className} antialiased bg-[#121212]`}> 
                 <NavBar />
-                <main className="min-h-screen">
+                <main>
                     {children}
                 </main>
                 <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center shadow shadow-purple-500">

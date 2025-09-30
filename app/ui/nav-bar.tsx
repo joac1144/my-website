@@ -27,6 +27,7 @@ export default function NavBar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
+                                scroll={false}
                                 className={clsx(
                                     `relative ${sourceSerif4.className} text-md font-medium flex-1 text-center py-3 rounded transition-colors duration-200`,
                                     pathname === link.href
