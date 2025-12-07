@@ -11,7 +11,6 @@ type EmailSenderTemplateProps = {
     message: string;
 };
 
-
 export function EmailSelfTemplate({ name, email, message }: EmailSelfTemplateProps) {
     return (
         <Html>
@@ -49,7 +48,7 @@ export function EmailSenderTemplate({ name, message }: EmailSenderTemplateProps)
                         Thank you for reaching out, {name}!
                     </Heading>
                     <Text style={{ marginBottom: "16px" }}>
-                        I&apos;ve received your message and will get back to you as soon as possible.
+                        I have received your message and will get back to you as soon as possible.
                     </Text>
                     <Section>
                         <Text style={{ marginBottom: "8px" }}><strong>Your Message:</strong></Text>

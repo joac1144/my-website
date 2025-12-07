@@ -41,5 +41,6 @@ export type ProjectDetails = {
     content: string;
     gallery: {
         url: string;
+        alt: string | null;
     }[];
 }

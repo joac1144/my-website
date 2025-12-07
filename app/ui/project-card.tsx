@@ -24,7 +24,7 @@ export default function ProjectCard({ project, extraCss }: {
             )}
 
             <div className="p-4">
-                <h2 className="text-xl text-white font-semibold mb-2 group-hover:text-purple-700/90 transition-colors">
+                <h2 className="text-xl text-white font-semibold mb-2 group-hover:text-purple-600/75 transition-colors">
                     {project.title}
                 </h2>
                 <p className="text-gray-300 line-clamp-3 mb-4">
