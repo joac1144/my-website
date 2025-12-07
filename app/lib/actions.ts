@@ -33,6 +33,13 @@ export async function sendContactForm(prevState: ContactFormState, formData: For
         message: formData.get("message")
     });
 
+    const honeypotField = formData.get("lastName");
+
+    if (honeypotField != null) {
+        console.log("Honeypot field was used, prevent sending form");
+        return { message: `Bot` };
+    }
+
     if (!validatedFields.success) {
         return {
             message: null,

@@ -19,6 +19,12 @@ export default function ContactForm() {
                         <Input id="name" name="name" ariaDescribedBy="name-error" defaultValue={formState.values?.name} />
                         <FormError id="name-error" errors={formState.errors?.name} />
                     </div>
+                    <div className="hidden">
+                        <label htmlFor="lastName" className="block font-medium text-gray-300 mb-1">
+                            Last Name
+                        </label>
+                        <Input id="lastName" name="lastName" ariaDescribedBy="lastname-error" defaultValue="" />
+                    </div>
                     <div>
                         <label htmlFor="email" className="block font-medium text-gray-300 mb-1">
                             Email
@@ -39,7 +45,7 @@ export default function ContactForm() {
                             className="w-full rounded-lg bg-black/5 border border-purple-700/50 text-gray-200 placeholder-gray-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
                         />
                         <FormError id="message-error" errors={formState.errors?.message} />
-                        <span className="text-gray-300 text-sm">You will receive a confirmation email with your message.</span>
+                        <span className="text-gray-300 text-sm">You will receive a confirmation email with your message. Remember to check your spam folder.</span>
                     </div>
                     <button
                         type="submit"
